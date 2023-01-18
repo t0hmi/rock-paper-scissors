@@ -1,0 +1,58 @@
+@import '../../scss/variables';
+
+.rules {
+    &__cta {
+        color: white;
+        border: solid 1px white;
+        padding: 5px  15px;
+        width: fit-content;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .overlay {
+        display: none;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: rgba(5, 5, 5, 0.658);
+
+        &--open {
+            display: block;
+            pointer-events: all;
+        }
+    }
+
+    &__modal {
+        z-index: 3;
+        padding: 15px;
+        color: $Dark-Text;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        border-radius: 10px;
+        display: none;
+
+        &--open {
+            display: block;
+        }
+        
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        
+            img {
+                cursor: pointer;
+            }
+        }
+    }
+}

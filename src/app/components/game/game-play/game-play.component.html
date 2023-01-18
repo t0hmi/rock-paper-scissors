@@ -1,0 +1,66 @@
+<div class="game-play">
+    <div class="game-play__choice">
+        <div class="choice__header">
+            YOU PICKED
+        </div>
+        <ng-container [ngSwitch]="id">
+            <div class="choice rock" *ngSwitchCase="0">
+                <img src="assets/icon-rock.svg" alt="">
+            </div>
+            <div class="choice paper"*ngSwitchCase="1" >
+                <img src="assets/icon-paper.svg" alt="">
+            </div>
+            <div class="choice scissors" *ngSwitchCase="2">
+                <img src="assets/icon-scissors.svg" alt="">
+            </div>  
+        </ng-container>
+    </div>
+    <ng-container>
+        <div class="game-play__result" *ngIf="gameStatus">
+            <div class="result__status">
+                <ng-container [ngSwitch]="gameStatus">
+                    <div *ngSwitchCase="'DRAW'">
+                        IT'S A DRAW
+                    </div>
+                    <div *ngSwitchCase="'WIN'">
+                        YOU WIN
+                    </div>
+                    <div *ngSwitchCase="'LOOSE'">
+                        YOU LOOSE
+                    </div>
+                </ng-container>
+            </div>
+            <div class="result__play-again">
+                <a [routerLink]="''">
+                    PLAY AGAIN
+                </a>
+            </div>
+        </div>
+    </ng-container>
+    <div class="game-play__choice">
+            <div class="choice__header">
+                THE HOUSE PICKED
+            </div>
+            <ng-container *ngIf="isLoading; else houseChoiceDiv">
+                <div class="choice loading">
+                    <div class="pulsating-circle"></div>
+                </div>
+            </ng-container>
+
+           
+
+            <ng-template #houseChoiceDiv>
+                <ng-container [ngSwitch]="houseChoice">
+                    <div class="choice rock" *ngSwitchCase="0">
+                        <img src="assets/icon-rock.svg" alt="">
+                    </div>
+                    <div class="choice paper"*ngSwitchCase="1" >
+                        <img src="assets/icon-paper.svg" alt="">
+                    </div>
+                    <div class="choice scissors" *ngSwitchCase="2">
+                        <img src="assets/icon-scissors.svg" alt="">
+                    </div>  
+                </ng-container>
+            </ng-template>
+        </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="rules">
+    <div class="rules__cta" (click)="openModal()">RULES</div>
+    <div class="overlay" [ngClass]="{'overlay--open': isModalOpen}"></div>
+    <div class="rules__modal" [ngClass]="{'rules__modal--open': isModalOpen}">
+        <div class="rules__modal__header" >
+            <h3>RULES</h3>
+            <img src="assets/icon-close.svg" alt="" (click)="closeModal()">
+        </div>
+        <img src="assets/image-rules.svg" alt="">
+    </div>
+</div>

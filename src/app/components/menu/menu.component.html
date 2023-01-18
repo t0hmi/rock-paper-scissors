@@ -1,0 +1,7 @@
+<div class="menu">
+    <div class="menu__choices">
+        <div class="choice" *ngFor="let choice of choices">{{choice}}</div>
+    </div>
+    
+    <div class="menu__score"> <span>SCORE</span> <span class="score">{{score$ | async}}</span></div>
+</div>
